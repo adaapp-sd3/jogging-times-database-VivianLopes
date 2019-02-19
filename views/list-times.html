@@ -17,11 +17,23 @@
         <h2>Jog Times</h2>
         <div>
           Signed in as {{ user.name }} ({{ user.email }})
+            <a href="/start-following"
+               class="text-white border border-white rounded p-2 no-underline hover:bg-purple-light ml-4"
+            >
+                Follow Others
+            </a>
           <a
             href="/sign-out"
             class="text-white border border-white rounded p-2 no-underline hover:bg-purple-light ml-4"
           >
             Sign Out
+          </a>
+          <a
+                  href="/delete-account"
+                  class="text-red-darker border border-red-darker rounded p-2 no-underline hover:bg-purple-light ml-4"
+          >
+            Delete Account
+
           </a>
         </div>
       </div>
