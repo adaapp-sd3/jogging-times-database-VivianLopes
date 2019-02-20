@@ -34,7 +34,6 @@ routes.get('/create-account', function(req, res) {
 routes.post('/create-account', function(req, res) {
     var form = req.body
 
-    // TODO: add some validation in here to check
     console.log('create user', form)
 
     // hash the password - we dont want to store it directly
@@ -185,7 +184,6 @@ routes.get('/start-following', function(req, res){
     })
 })
 
-    //TODO: make sure you cannot follow multiple times, what happens when two or more users have the same name, fix it(?)
 //handle start following form
 routes.post('/start-following/new', function(req, res){
     var form = req.body
@@ -193,7 +191,6 @@ routes.post('/start-following/new', function(req, res){
 
     var id = User.selectUserByName(form.user).id
 
-     //console.log("THIS USER HAS ID...", id)
 
     var newFollowing = Following.insert(id, req.cookies.userId)
 

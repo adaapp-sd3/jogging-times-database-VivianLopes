@@ -32,7 +32,6 @@ class Following {
 
     static findByName(name) {
         var id = selectUserByName.get(name)
-       // console.log("USERS ID IS ....", id)
         return id
     }
 
