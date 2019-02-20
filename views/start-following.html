@@ -34,28 +34,27 @@
     </div>
 </header>
 
-<main class="h-screen flex flex-col items-center justify-center" style="margin-top: 50px; margin-bottom: 50px;">
+<main class="h-screen flex flex-col items-center justify-center" style="margin-top: 10px; margin-bottom: 50px;">
   <!-- top-->
     <section
             class="flex items-center"
     >
         {{#each follower}}
-        <a
-                class="flex-auto w-64 m-4  bg-white shadow rounded-lg text-black no-underline"
-        >
             <div
                     class="m-4 p-6 rounded-lg bg-white flex-1 shadow flex flex-col-reverse"
             >
-                <h3 class="uppercase text-sm text-indigo-light font-semibold">
+                <h3 class="uppercase text-sm text-indigo-light font-semibold"
+                    style="height: 4rem"
+                >
                     Following You
                 </h3>
                 <div class="text-5xl text-indigo font-semibold">
                     {{ name }}
                 </div>
             </div>
-        </a>
         {{/each}}
     </section>
+
     <section
             class="flex flex-wrap border border-grey-light border-l-0 border-r-0 border-b-0 mt-6 pt-6"
     >
@@ -90,13 +89,6 @@
         <div
                 class="m-4 p-6 rounded-lg bg-white flex-1 shadow flex flex-col-reverse"
         >
-            <!--<a-->
-                    <!--href="/unfollow"-->
-                    <!--class="block w-auto rounded bg-purple text-white p-2 m-4 ml-auto"-->
-            <!--&gt;-->
-                <!--Unfollow-->
-
-            <!--</a>-->
             <h3
                     class="uppercase text-sm text-indigo-light font-semibold"
                     style="height: 4rem"

@@ -29,11 +29,6 @@ class Following {
         return allFollowees
     }
 
-    // static findFolloweeId(follower_id){
-    //     var followeeId =
-    //     return followee_id
-    //
-    // }
 
     static findByName(name) {
         var id = selectUserByName.get(name)

@@ -174,26 +174,14 @@ routes.post('/times/new', function(req, res) {
 //show start following page
 routes.get('/start-following', function(req, res){
     var loggedInUser = User.findById(req.cookies.userId)
-
+    var allFollowers = User.getFollowing(req.cookies.userId)
     var allFollowees = Following.findAllFromUser(req.cookies.userId)
 
-    console.log("LJSF.G", allFollowees )
-   // var allFollowers = Following.findAllUserFollowers(req.cookies.userId)
-   // var followeeId = Following.findFolloweeId(req.cookies.userId)
-   //  if (followee_id === loggedInUser){
-   //      return follower_id
-   //  }
-   //
-   //  for(var i = 0; i < allFollowees.length; i ++){
-   //      if (followee_id === loggedInUser){
-   //          return follower_id
-   //      }
-   //  }
 
     res.render('start-following.html', {
         user: loggedInUser,
         following: allFollowees,
-       // follower: follower_id
+        follower: allFollowers
     })
 })
 
@@ -213,12 +201,6 @@ routes.post('/start-following/new', function(req, res){
     res.redirect('/start-following')
 })
 
-// //handles unfollowing
-// routes.get('unfollow.html', function(req, res) {
-//     var loggedInUser = User.findById(req.cookies.userId)
-//
-//     Following.deleteFollowById
-// })
 
 // show the edit time form for a specific time
 routes.get('/times/:id', function(req, res) {

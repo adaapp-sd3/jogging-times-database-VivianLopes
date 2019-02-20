@@ -6,6 +6,7 @@ var selectUserById = db.prepare('SELECT * FROM user WHERE id = ?')
 var selectUserByEmail = db.prepare('SELECT * FROM user WHERE email = ?')
 var deleteAccountById = db.prepare('DELETE FROM user WHERE id = ?')
 var selectUserByName = db.prepare('SELECT name, id FROM user WHERE name = ?')
+var getFollowing = db.prepare('SELECT * FROM user INNER JOIN following ON user.id = following.follower_id WHERE followee_id = ?')
 
 class User {
   static insert(name, email, password_hash) {
@@ -46,7 +47,12 @@ class User {
     }
   }
 
-  constructor(databaseRow) {
+  static getFollowing(origin) {
+      return getFollowing.all(origin)
+  }
+
+
+        constructor(databaseRow) {
     this.id = databaseRow.id
     this.name = databaseRow.name
     this.email = databaseRow.email
